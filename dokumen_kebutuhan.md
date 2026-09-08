@@ -34,12 +34,49 @@
 
 ---
 ## 3. Kebutuhan Nonfungsional
-1. **Performa:** [spesifikasi & ukuran]
-2. **Keamanan:** [mekanisme]
-3. **Usabilitas:** [deskripsi]
-## 4. Batasan Sistem
-- [Batasan 1]
-- [Batasan 2]
+
+Kebutuhan nonfungsional menjelaskan kualitas dan karakteristik sistem yang harus dipenuhi agar aplikasi absensi dapat digunakan dengan baik.
+
+### NFR-01: Performance
+
+Sistem harus memberikan respons yang cepat ketika pengguna melakukan aktivitas pada aplikasi, seperti login, melakukan absensi, melihat data absensi, dan membuka rekapitulasi.
+
+**Indikator terukur:**
+- Waktu respons sistem maksimal 5 detik untuk setiap permintaan pada kondisi penggunaan normal.
+- Proses penyimpanan data absensi maksimal 5 detik setelah pengguna melakukan absensi.
+
+### NFR-02: Security
+
+Sistem harus menjaga keamanan akun dan data absensi yang tersimpan. Setiap pengguna harus memiliki akses sesuai dengan perannya.
+
+**Indikator terukur:**
+- Sistem menyediakan login menggunakan username/email dan password.
+- Sistem memiliki 3 tingkat hak akses, yaitu peserta didik, pengajar/tutor, dan admin/pengelola.
+- Pengguna hanya dapat mengakses fitur sesuai dengan hak akses yang dimiliki.
+- Password pengguna harus disimpan dalam bentuk hash dan tidak disimpan sebagai teks biasa.
+
+### NFR-03: Usability
+
+Sistem harus memiliki tampilan dan alur penggunaan yang sederhana sehingga dapat digunakan oleh pengguna tanpa membutuhkan pengetahuan teknis yang tinggi.
+
+**Indikator terukur:**
+- Pengguna dapat melakukan proses absensi melalui maksimal 3 langkah utama setelah berhasil login.
+- Menu utama menampilkan fitur sesuai dengan peran pengguna.
+- Sistem menampilkan pesan berhasil atau gagal setelah pengguna melakukan proses penting, seperti login dan absensi.
+- Tampilan dapat digunakan pada komputer maupun perangkat mobile.
+
+### NFR-04: Reliability
+
+Sistem harus mampu menyimpan data absensi secara konsisten sehingga data yang telah berhasil dicatat tidak hilang atau berubah tanpa melalui proses yang sesuai.
+
+**Indikator terukur:**
+- Setiap absensi yang berhasil dilakukan harus tersimpan di database dan dapat ditampilkan kembali.
+- Sistem memberikan notifikasi keberhasilan setelah data absensi berhasil disimpan.
+- Sistem tidak boleh menyimpan data absensi ganda untuk peserta didik yang sama pada kegiatan pembelajaran yang sama.
+- Data absensi yang sudah tersimpan dapat diakses kembali oleh pengguna yang memiliki hak akses.
+
+---
+
 ## 5. User Story & Acceptance Criteria
 ### US-01
 > Sebagai [Aktor], saya ingin [fitur], sehingga [manfaat].
