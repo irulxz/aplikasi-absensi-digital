@@ -78,8 +78,82 @@ Sistem harus mampu menyimpan data absensi secara konsisten sehingga data yang te
 ---
 
 ## 5. User Story & Acceptance Criteria
-### US-01
-> Sebagai [Aktor], saya ingin [fitur], sehingga [manfaat].
-- [ ] AC-1: [kriteria]
-- [ ] AC-2: [kriteria]
-- [ ] AC-3: [kriteria]
+
+### US-01 — Peserta Didik
+
+> Sebagai peserta didik, saya ingin melakukan absensi secara digital melalui sistem, sehingga kehadiran saya dapat tercatat tanpa menggunakan daftar hadir manual.
+
+- [ ] AC-1: Peserta didik dapat masuk ke sistem menggunakan akun yang telah terdaftar.
+- [ ] AC-2: Peserta didik dapat memilih kegiatan pembelajaran yang sedang diikuti dan melakukan absensi.
+- [ ] AC-3: Setelah absensi berhasil, sistem menyimpan data kehadiran dan menampilkan informasi bahwa absensi berhasil dilakukan.
+- [ ] AC-4: Peserta didik tidak dapat melakukan absensi lebih dari satu kali pada kegiatan pembelajaran yang sama.
+- [ ] AC-5: Peserta didik dapat melihat riwayat absensi pribadi yang telah dilakukan.
+
+### US-02 — Pengajar/Tutor
+
+> Sebagai pengajar/tutor, saya ingin melihat data kehadiran peserta didik, sehingga saya dapat memantau kehadiran peserta didik pada kegiatan pembelajaran yang saya ampu.
+
+- [ ] AC-1: Pengajar/tutor dapat masuk ke sistem menggunakan akun dengan hak akses pengajar.
+- [ ] AC-2: Pengajar/tutor dapat melihat daftar peserta didik beserta status kehadirannya.
+- [ ] AC-3: Data kehadiran menampilkan informasi yang diperlukan, seperti nama peserta didik, tanggal, dan status kehadiran.
+- [ ] AC-4: Pengajar/tutor hanya dapat melihat data absensi yang sesuai dengan kegiatan pembelajaran yang diampunya.
+
+### US-03 — Admin/Pengelola PKBM
+
+> Sebagai admin/pengelola PKBM, saya ingin mengelola data peserta didik dan melihat rekapitulasi absensi, sehingga data peserta didik dan kehadiran dapat dikelola secara terorganisir.
+
+- [ ] AC-1: Admin/pengelola dapat menambahkan, melihat, mengubah, dan menghapus data peserta didik.
+- [ ] AC-2: Admin/pengelola dapat melihat data absensi peserta didik yang tersimpan di dalam sistem.
+- [ ] AC-3: Admin/pengelola dapat melihat rekapitulasi absensi berdasarkan periode tertentu.
+- [ ] AC-4: Data yang ditampilkan dalam rekapitulasi sesuai dengan data absensi yang tersimpan di dalam sistem.
+
+---
+
+## 6. Narrative Use Case
+
+### UC-01 — Pencatatan Absensi Peserta Didik
+
+**Nama Use Case:** Pencatatan Absensi
+
+**Kode:** UC-01
+
+**Aktor Utama:** Peserta Didik
+
+**Tujuan:** Memungkinkan peserta didik mencatat kehadiran pada kegiatan pembelajaran secara digital.
+
+**Prasyarat:**
+1. Peserta didik telah memiliki akun yang terdaftar pada sistem.
+2. Peserta didik telah berhasil melakukan login.
+3. Peserta didik memiliki kegiatan pembelajaran yang dapat diakses untuk melakukan absensi.
+
+**Alur Utama:**
+1. Peserta didik membuka menu Absensi.
+2. Sistem menampilkan kegiatan pembelajaran yang tersedia untuk peserta didik.
+3. Peserta didik memilih kegiatan pembelajaran yang sedang diikuti.
+4. Sistem menampilkan informasi kegiatan pembelajaran dan pilihan untuk melakukan absensi.
+5. Peserta didik melakukan konfirmasi kehadiran.
+6. Sistem memeriksa data absensi peserta didik pada kegiatan yang dipilih.
+7. Sistem memastikan peserta didik belum melakukan absensi pada kegiatan tersebut.
+8. Sistem mencatat data kehadiran peserta didik ke dalam sistem.
+9. Sistem menampilkan pemberitahuan bahwa absensi berhasil dilakukan.
+10. Data absensi yang berhasil dicatat dapat dilihat pada riwayat absensi pribadi peserta didik.
+
+**Alur Alternatif:**
+
+**A. Peserta didik telah melakukan absensi**
+1. Peserta didik memilih kegiatan pembelajaran.
+2. Sistem memeriksa data absensi peserta didik.
+3. Sistem menemukan bahwa peserta didik telah melakukan absensi pada kegiatan tersebut.
+4. Sistem tidak mencatat absensi kembali.
+5. Sistem menampilkan pemberitahuan bahwa peserta didik telah melakukan absensi.
+
+**B. Terjadi kegagalan dalam penyimpanan data**
+1. Peserta didik melakukan konfirmasi kehadiran.
+2. Sistem mengalami kegagalan dalam menyimpan data absensi.
+3. Sistem tidak mencatat absensi sebagai kehadiran yang berhasil.
+4. Sistem menampilkan pemberitahuan bahwa absensi gagal disimpan.
+5. Peserta didik dapat mencoba melakukan absensi kembali.
+
+**Kondisi Akhir:**
+
+Jika proses berhasil, data kehadiran peserta didik tersimpan dalam sistem dan dapat dilihat kembali melalui riwayat absensi. Data tersebut juga dapat digunakan oleh pengajar/tutor untuk memantau kehadiran serta oleh admin/pengelola PKBM untuk melakukan rekapitulasi absensi.
