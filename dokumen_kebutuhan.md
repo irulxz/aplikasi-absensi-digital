@@ -77,6 +77,26 @@ Sistem harus mampu menyimpan data absensi secara konsisten sehingga data yang te
 
 ---
 
+## 4. Batasan Sistem
+
+- **SC-01: Teknologi Pengembangan**  
+  Aplikasi harus dikembangkan menggunakan Laravel sebagai framework pengembangan aplikasi web dan MySQL/MariaDB sebagai sistem basis data.
+
+  **Batasan:**
+  - Framework aplikasi menggunakan Laravel.
+  - Database menggunakan MySQL atau MariaDB.
+  - Aplikasi berbasis web, bukan aplikasi mobile native.
+
+- **SC-02: Hak Akses Berdasarkan Peran**  
+  Aplikasi harus membatasi akses pengguna berdasarkan peran yang telah ditentukan, yaitu peserta didik, pengajar/tutor, dan admin/pengelola PKBM.
+
+  **Batasan:**
+  - Peserta didik hanya dapat melakukan absensi dan melihat riwayat absensi pribadi.
+  - Pengajar/tutor dapat memantau dan mengelola data absensi peserta didik pada kegiatan yang diampu.
+  - Admin/pengelola dapat mengelola data peserta didik serta melihat dan merekap data absensi.
+
+---
+
 ## 5. User Story & Acceptance Criteria
 
 ### US-01 — Peserta Didik
