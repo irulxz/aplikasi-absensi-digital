@@ -18,6 +18,7 @@ class PesertaDidik extends Model
         'nis',
         'nama',
         'alamat',
+        'program_paket',
     ];
 
     /**

@@ -19,17 +19,11 @@ class Tutor extends Model
         'nama',
     ];
 
-    /**
-     * Relasi Tutor dengan User.
-     */
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    /**
-     * Relasi Tutor dengan Jadwal.
-     */
     public function jadwals(): HasMany
     {
         return $this->hasMany(Jadwal::class);
