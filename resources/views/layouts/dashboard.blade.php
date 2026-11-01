@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -711,6 +710,13 @@
                         <span class="menu-icon">⌂</span>
                         Dashboard
                     </a>
+
+                    <a href="{{ route('peserta.jadwal.index') }}"
+                    class="menu-link {{ request()->routeIs('peserta.jadwal.*') ? 'active' : '' }}">
+                        <span class="menu-icon">▦</span>
+                        Jadwal Belajar
+                    </a>
+
 
                 @endif
                 </nav>

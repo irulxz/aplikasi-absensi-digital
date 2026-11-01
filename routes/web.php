@@ -11,6 +11,7 @@ use App\Http\Controllers\TutorDashboardController;
 use App\Http\Controllers\TutorJadwalController;
 use App\Http\Controllers\TutorAbsensiController;
 use App\Http\Controllers\PesertaDashboardController;
+use App\Http\Controllers\PesertaJadwalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -218,5 +219,12 @@ Route::middleware('role:peserta_didik')
             PesertaDashboardController::class,
             'index'
         ])->name('peserta.dashboard');
+
+        Route::get('/jadwal', [
+            PesertaJadwalController::class,
+            'index'
+        ])->name('peserta.jadwal.index');
+
+
 
     });
