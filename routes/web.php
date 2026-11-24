@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -12,6 +13,8 @@ use App\Http\Controllers\TutorJadwalController;
 use App\Http\Controllers\TutorAbsensiController;
 use App\Http\Controllers\PesertaDashboardController;
 use App\Http\Controllers\PesertaJadwalController;
+use App\Http\Controllers\PesertaAbsensiController;
+use App\Http\Controllers\PesertaRiwayatAbsensiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -208,6 +211,30 @@ Route::middleware('role:peserta_didik')
     ->prefix('peserta')
     ->group(function () {
 
+        // Jadwal Belajar Peserta Didik
+        Route::get('/jadwal', [
+            PesertaJadwalController::class,
+            'index'
+        ])->name('peserta.jadwal.index');
+
+        // Absensi Saya
+        Route::get('/absensi', [
+            PesertaAbsensiController::class,
+            'index'
+        ])->name('peserta.absensi.index');
+
+        // Proses Absen Hadir
+        Route::post('/absensi/{jadwalId}', [
+            PesertaAbsensiController::class,
+            'store'
+        ])->name('peserta.absensi.store');
+
+        // Riwayat Absensi Peserta Didik
+        Route::get('/riwayat-absensi', [
+            PesertaRiwayatAbsensiController::class,
+            'index'
+        ])->name('peserta.riwayat.index');
+
         // Profil peserta didik
         Route::view('/profil', 'peserta.menu-placeholder', [
             'judul' => 'Profil Saya',
@@ -219,12 +246,5 @@ Route::middleware('role:peserta_didik')
             PesertaDashboardController::class,
             'index'
         ])->name('peserta.dashboard');
-
-        Route::get('/jadwal', [
-            PesertaJadwalController::class,
-            'index'
-        ])->name('peserta.jadwal.index');
-
-
 
     });

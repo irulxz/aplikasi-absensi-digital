@@ -717,6 +717,17 @@
                         Jadwal Belajar
                     </a>
 
+                    <a href="{{ route('peserta.absensi.index') }}"
+                    class="menu-link {{ request()->routeIs('peserta.absensi.*') ? 'active' : '' }}">
+                        <span class="menu-icon">✓</span>
+                        Absensi Saya
+                    </a>
+
+                    <a href="{{ route('peserta.riwayat.index') }}"
+                    class="menu-link {{ request()->routeIs('peserta.riwayat.*') ? 'active' : '' }}">
+                        <span class="menu-icon">◷</span>
+                        Riwayat Absensi
+                    </a>
 
                 @endif
                 </nav>
