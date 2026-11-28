@@ -12,6 +12,7 @@ use App\Http\Controllers\TutorJadwalController;
 use App\Http\Controllers\TutorAbsensiController;
 use App\Http\Controllers\PesertaDashboardController;
 use App\Http\Controllers\PesertaJadwalController;
+use App\Http\Controllers\PesertaRiwayatAbsensiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -225,6 +226,10 @@ Route::middleware('role:peserta_didik')
             'index'
         ])->name('peserta.jadwal.index');
 
-
+        // Riwayat Absensi Peserta Didik
+        Route::get('/riwayat-absensi', [
+            PesertaRiwayatAbsensiController::class,
+            'index'
+        ])->name('peserta.riwayat.index');
 
     });
