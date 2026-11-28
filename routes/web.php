@@ -12,6 +12,7 @@ use App\Http\Controllers\TutorJadwalController;
 use App\Http\Controllers\TutorAbsensiController;
 use App\Http\Controllers\PesertaDashboardController;
 use App\Http\Controllers\PesertaJadwalController;
+use App\Http\Controllers\PesertaAbsensiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -225,6 +226,16 @@ Route::middleware('role:peserta_didik')
             'index'
         ])->name('peserta.jadwal.index');
 
+        // Absensi Saya
+        Route::get('/absensi', [
+            PesertaAbsensiController::class,
+            'index'
+        ])->name('peserta.absensi.index');
 
+        // Proses Absen Hadir
+        Route::post('/absensi/{jadwalId}', [
+            PesertaAbsensiController::class,
+            'store'
+        ])->name('peserta.absensi.store');
 
     });
